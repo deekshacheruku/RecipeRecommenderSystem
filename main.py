@@ -1,5 +1,5 @@
 from flask import Flask,request,render_template
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import pandas as pd
 
@@ -9,7 +9,7 @@ import pandas as pd
 def Create():
     data=pd.read_csv('data.csv')
     #create a count matrix
-    cv=CountVectorizer()
+    cv=TfidfVectorizer()
     count_matrix=cv.fit_transform(data['Description'])
     #create a similarity matrix
     sim=cosine_similarity(count_matrix)
@@ -62,6 +62,33 @@ def recommend():
     else:
         return render_template('recom.html',rec=rec,r=r,t='l')
     
+@app.route('/get_soups')
+def get_soups():
+    return"Hello get_soups"
+    
+@app.route('/get_homemaderemedies')
+def get_homemaderemedies():
+    return"Hello get_homemaderemedies"
+    
+@app.route('/get_drinks')
+def get_drinks():
+    return"Hello get_drinks"
+    
+@app.route('/get_breakfast')
+def get_breakfast():
+    return"Hello get_breakfast"
+    
+@app.route('/get_pancakes')
+def get_pancakes():
+    return"Hello get_pancakes"
+    
+@app.route('/get_noodles')
+def get_noodles():
+    return"Hello get_noodles"
+    
+@app.route('/get_lunch')
+def get_lunch():
+    return"Hello get_lunch"
     
 
 if __name__ == "__main__":
