@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+        <title> Recipe Recommendor System </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" type="text/css">
+    </head>
+    
+ <body class="body-custom">
+     <header>
+         <div class="navbar-fixed">
+             <nav class="nav-bar">
+                 <div class="container">
+                     <div class="nav-wrapper">
+                         <a href="{{url_for('home')}}" class="brand-logo logo-color"> Recipes </a>
+                         <a href="#" data-activates="mobile-nav" class="button-collapse right-align">
+                             <i class="material-icons">menu</i>
+                        </a>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li>
+                                <a href="{{url_for('get_soups')}}">Soups</a>
+                            <li>
+                            <li>
+                                <a href="{{url_for('get_homemaderemedies')}}">Homemade Remedies</a>
+                            <li>
+                            <li>
+                                <a href="{{url_for('get_drinks')}}">Drinks</a>
+                            <li>
+                            <li>
+                                <a href="{{url_for('get_breakfast')}}">Breakfast</a>
+                            <li>
+                            <li>
+                                <a href="{{url_for('get_pancakes')}}">Pancakes</a>
+                            <li>
+                            <li>
+                                <a href="{{url_for('get_noodles')}}">Noodles</a>
+                            <li>
+                            <li>
+                                <a href="{{url_for('get_lunch')}}">Lunch</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+     {% block content %}{% endblock %}
+</body>
+</html>
+                                 
+                              
+                        
