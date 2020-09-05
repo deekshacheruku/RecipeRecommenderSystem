@@ -1,22 +1,29 @@
 {% extends 'index.html' %}
-{% block content %}       
+{% block content1 %}       
         {% if t=='s' %}
-            <div class="shadow p-3 mb-5 bg-white rounded">
-                <h3 style="color:rgb(0, 102, 255)">Sorry! This Recipe is not in our database.</h3>
-                <h3 style="color:rgb(0, 102, 255)">Please check if you spelled it correct.</h3>
-                <h3 style="color:rgb(0, 102, 255)">Or try with another Recipe.</h3>
+            <center>
+            <div>
+                <h5 style="color:rgd(72,10,72);font-family:'Comic Sans MS'">Sorry! This Recipe is not in our database. Please check if you spelled it correct.</h5>
+                <h5 style="color:rgd(72,10,72);font-family:'Comic Sans MS'">Or try with another Recipe.</h5>
             </div>
-
+            </center>
+            
+            <br>
+            <br>
           {% else %}
-              <div class="shadow p-3 mb-5 bg-white rounded">
-                <h1 style="color:rgb(0, 102, 255)">"{{rec}}" is a great choice.</h1>
-                <h3 style="color:rgb(0, 102, 255)">Here are some more like this</h3>
+          <center>
+              <div>
+                <h5 style="color:rgd(72,10,72);font-family:'Comic Sans MS'">"{{rec}}" is a great choice.</h5>
+                <h5 style="color:rgd(72,10,72);font-family:'Comic Sans MS'">Here are some more like this</h5>
               </div>
 
                 <ul class="list-group list-group-flush">
                   {% for m in r %}
-                    <li class="list-group-item" style="color:rgb(0, 179, 0)"><strong>{{m|capitalize}}</strong></li>
+                    <li class="list-group-item" style="color:rgb(72, 10, 72)"><strong>{{m|capitalize}}</strong></li>
                   {% endfor %}
                 </ul>
+            </center>
+            <br>
+    
           {% endif %}
 {% endblock %}
