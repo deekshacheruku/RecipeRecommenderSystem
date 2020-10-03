@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+            <center>
+                <ul class="list-group list-group-flush">
+                    {% for m in range(0,n) %}
+                    <li class="list-group-item" style="color:rgb(72, 10, 72)">
+                        <a href="{{ url_for('get_Items',m=s[m]) }}"><strong>{{s[m]}}</strong></a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </center>
+            <br>
+
+
+
+<div>
+{% block content1 %}
+{% endblock %}
+</div>
+<br>
+<div>
+    <center>
+  <h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'">Enter the Recipe name you like to get recommendations.</h5>
+    </center>
+</div>
+
+<center>
+  <form action="{{url_for('recommend')}}">
+  <input type="text" name="recipe" style="width: 300px;" placeholder="Recipe name here">
+    <input  type="submit" class="btn btn-info"  value="Submit">
+  </form>
+</center>
+{% endblock %}

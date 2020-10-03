@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block content %}
+
+                <center>
+                <h4 style="color:rgb(72, 10, 72)"> <strong>{{m}}</strong></li></h4>
+                </center>
+                <dl>
+                  {% for k in range(0,n)%}
+                    {% if k==2 %}
+                        <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'">
+                           About : </h5></dt>
+                        <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==4  and a[k] != "None" %}
+                         <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                             Cook Time : </h5></dt>
+                         <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==5 and a[k] != "None" %}
+                         <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                             Servings : </h5></dt>
+                        <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==6 and a[k] != "None" %}
+                         <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'">  
+                             Medical Background : </h5></dt>
+                        <dd style="color:rgb(72, 10, 72)"><strong>{{a[k][2:]}}</strong></dd>
+                    {% elif k==7 and a[k] != "None" %}
+                          <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                              Vitamins : </h5></dt>
+                          <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==8 and a[k] != "None" %}
+                          <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                              Calories : </h5></dt>
+                          <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==9 and a[k] != "None" %}
+                          <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                              Protein : </h5></dt>
+                          <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==10 and a[k] != "None" %}
+                          <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                              Calcium : </h5></dt>
+                          <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==11 and a[k] != "None" %}
+                         <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                             Iron : </h5> </dt>
+                        <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==12 and a[k] != "None" %}
+                         <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                             Carbohydrate :</h5></dt> 
+                        <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==13 and a[k] != "None" %}
+                          <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                              Fat : </h5></dt>
+                        <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==14 and a[k] != "None" %}
+                          <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'">
+                               Ingredients :</h5> </dt> 
+                        <dd style="color:rgb(72, 10, 72)"><strong>{{a[k]}}</strong></dd>
+                    {% elif k==15  %}
+                          <dt><h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'"> 
+                              Procedure : </h5></dt>
+                        {% for r in a[k] %}
+                        <dd style="color:rgb(72, 10, 72)"><strong>{{r}}</strong></dd>
+                        {% endfor %}
+                    {% endif %}
+                  {% endfor %}
+                </dl>
+            
+            <br>
+
+
+
+<div>
+{% block content1 %}
+{% endblock %}
+</div>
+<br>
+<div>
+    <center>
+  <h5 style="color:rgb(72, 10, 72);font-family:'Comic Sans MS'">Enter the Recipe name you like to get recommendations.</h5>
+    </center>
+</div>
+
+<center>
+  <form action="{{url_for('recommend')}}">
+  <input type="text" name="recipe" style="width: 300px;" placeholder="Recipe name here">
+    <input  type="submit" class="btn btn-info"  value="Submit">
+  </form>
+</center>
+{% endblock %}
