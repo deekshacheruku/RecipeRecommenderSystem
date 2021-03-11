@@ -1,8 +1,8 @@
 <b> Had Cravings..? </b>
 
-Wanted To have foods of your kind..?
+<b> Wanted To have foods of your kind..? <b>
 
-Get them recommended!
+<b> Get them recommended!<b>
 
 I have build a basic Recommender System which uses TFIDVECTORIZER method in SCILEARN library of Python and recommends the top 10 list for you.
 
